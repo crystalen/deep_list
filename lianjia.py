@@ -19,7 +19,7 @@ print(details)
 
 with open('lianjia.csv','w',encoding='utf-8')as f:
     w=csv.writer(f)
-    w.writerow(['位置','面积','朝向','格局','楼层'])
+    w.writerow(['位置','面积','朝向','格局','楼层','价钱'])
     for i in details:
         w.writerow([i[0],i[1],i[2],i[3],i[4].replace(' ',''),i[5]])
     
