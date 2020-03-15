@@ -10,6 +10,7 @@ bio_sum=0
 pol_sum=0
 his_sum=0
 geo_sum=0
+sum_sum=0
 result={}
 for i in r[1:]:
     name=i[:2]
@@ -32,6 +33,7 @@ for i in r[1:]:
     geo=int(i[27:29])
     geo_sum=geo_sum+geo
     sum=ch+mat+eng+phy+chem+bio+pol+his+geo
+    sum_sum=sum_sum+sum
     avg='%.2f'%(sum/9)
     result[name]=[ch,mat,eng,phy,chem,bio,pol,his,geo,sum,avg]
 
@@ -52,7 +54,7 @@ for i in rank:
 
 with open('成绩r.txt','w',newline='',encoding='utf-8')as f:
     f.writelines(['名次 ','姓名 ','语文 ','数学 ','英语 ','物理 ','化学 ','生物 ','政治 ','历史 ','地理 ','总分 ','平均分'+'\n'])
-    f.writelines(['0 ','平均',avg(ch_sum),' ',avg(mat_sum),' ',avg(eng_sum),' ',avg(phy_sum),' ',avg(chem_sum),' ',avg(bio_sum),' ',avg(pol_sum),' ',avg(his_sum),' ',avg(geo_sum),'\n'])
+    f.writelines(['0 ','平均',avg(ch_sum),' ',avg(mat_sum),' ',avg(eng_sum),' ',avg(phy_sum),' ',avg(chem_sum),' ',avg(bio_sum),' ',avg(pol_sum),' ',avg(his_sum),' ',avg(geo_sum),' ','%.2f'%(float(sum_sum)/30),' ','%.2f'%(float(avg(sum_sum))/9),'\n'])
     n=1
     for k,v in result_r.items():
         f.writelines([str(n),'   ',k,' ',str(v[0]),' ',str(v[1]),' ',str(v[2]),' ',str(v[3]),' ',str(v[4]),' ',str(v[5]),' ',str(v[6]),' ',str(v[7]),' ',str(v[8]),' ',str(v[9]),' ',str(v[10]),'\n'])
