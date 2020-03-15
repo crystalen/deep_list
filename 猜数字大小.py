@@ -70,6 +70,6 @@ while True:
     if c=='q':
         break
 
-with open ('game_one_user.txt','w')as f:
+with open ('game_one_user.txt','r+')as f:
     f.write(text+'\n')
 
