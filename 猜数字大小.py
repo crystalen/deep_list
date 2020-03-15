@@ -39,7 +39,6 @@ with open ('game_one_user.txt','r')as f:
         gamer_name_list.append(gamer_name)
         gamer_avg=re.findall(r'.*均(.*)轮',i)[0]
         gamer_info[gamer_name]=['玩过'+gamer_count+'把','最快'+gamer_min+'次','平均'+gamer_avg+'轮']
-print(gamer_info)
 
 name=input('叫什么啊')
 if name in gamer_name_list:
@@ -71,6 +70,6 @@ while True:
     if c=='q':
         break
 
-with open ('game_one_user.txt','a+')as f:
+with open ('game_one_user.txt','w')as f:
     f.write(text+'\n')
 
