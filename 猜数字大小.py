@@ -14,8 +14,8 @@ def result(counts,a):
     sum=0
     for i in counts:
         sum=sum+i
-    avg=float(sum/a)
-    text='玩家'+name+'玩了'+str(a)+'把. 最快'+str(b[0])+'次猜对! 平均'+str(avg)+'轮猜对'
+    avg='%.2f'%float(sum/a)
+    text='玩家'+name+'玩了'+str(a)+'把. 最快'+str(b[0])+'次猜对! 平均'+avg+'轮猜对'
 
     for k,v in gamer_info.items():
         if str(k)==name:
@@ -70,6 +70,6 @@ while True:
     if c=='q':
         break
 
-with open ('game_one_user.txt','r+')as f:
+with open ('game_one_user.txt','a')as f:
     f.write(text+'\n')
 
